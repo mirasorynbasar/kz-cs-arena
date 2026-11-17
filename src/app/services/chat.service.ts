@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ChatService {
   // Болашақта біздің Python (FastAPI) сервер осы мекенжайда жұмыс істейді
-  private apiUrl = 'http://localhost:8000/chat';
+  private apiUrl = 'https://kz-cs-arena.onrender.com/chat';
 
   constructor(private http: HttpClient) {}
 

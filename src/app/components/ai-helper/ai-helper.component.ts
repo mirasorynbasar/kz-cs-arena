@@ -50,7 +50,7 @@ export class AiHelperComponent implements OnInit, AfterViewChecked {
       this.userInput = '';
       this.isLoading = true;
 
-      this.http.post<any>('http://127.0.0.1:8000/chat', { prompt: text }).subscribe({
+      this.http.post<any>('https://kz-cs-arena.onrender.com/chat', { prompt: text }).subscribe({
         next: (res) => {
           this.messages.push({ text: res.reply, sender: 'ai' });
           this.isLoading = false;

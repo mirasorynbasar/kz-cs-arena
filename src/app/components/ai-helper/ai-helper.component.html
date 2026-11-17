@@ -1,0 +1,42 @@
+<div class="ai-chat-container">
+  
+  <button class="chat-toggle-btn" (click)="toggleChat()">
+    <span *ngIf="!isOpen">💬</span>
+    <span *ngIf="isOpen">✖</span>
+  </button>
+
+  <div class="chat-wrapper" *ngIf="isOpen">
+    <div class="chat-header">
+      <div class="status-dot"></div>
+      <span class="header-title">KZ CS Arena AI</span>
+    </div>
+
+    <div class="chat-body" #scrollContainer>
+      <div *ngFor="let msg of messages" [ngClass]="msg.sender === 'user' ? 'user-container' : 'ai-container'">
+        <div class="message-bubble">
+          {{ msg.text }}
+        </div>
+      </div>
+      
+      <div *ngIf="isLoading" class="ai-container">
+        <div class="message-bubble typing">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input 
+        type="text" 
+        [(ngModel)]="userInput" 
+        (keyup.enter)="sendMessage()" 
+        placeholder="Жазу..."
+      />
+      <button (click)="sendMessage()" [disabled]="isLoading || !userInput.trim()">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path fill="white" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

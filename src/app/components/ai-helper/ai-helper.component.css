@@ -1,0 +1,64 @@
+/* Контейнерді экранның бұрышына бекіту */
+.ai-chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Дөңгелек чат иконкасы */
+.chat-toggle-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #1f6feb;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  margin-top: 10px;
+}
+
+.chat-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Чат терезесінің дизайны */
+.chat-wrapper {
+  width: 350px;
+  height: 450px;
+  background: #1a1c23;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  border: 1px solid #30363d;
+  overflow: hidden;
+  margin-bottom: 10px; /* Батырма мен чат арасы */
+}
+
+/* Қалған стильдер (бұрынғымен бірдей) */
+.chat-header { background: #21262d; padding: 12px; display: flex; align-items: center; border-bottom: 1px solid #30363d; }
+.status-dot { width: 8px; height: 8px; background: #238636; border-radius: 50%; margin-right: 8px; }
+.header-title { color: white; font-weight: 600; font-size: 13px; }
+.chat-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #0d1117; }
+.message-bubble { padding: 8px 12px; border-radius: 12px; font-size: 13px; line-height: 1.4; max-width: 85%; }
+.user-container { display: flex; justify-content: flex-end; }
+.user-container .message-bubble { background: #1f6feb; color: white; border-bottom-right-radius: 2px; }
+.ai-container { display: flex; justify-content: flex-start; }
+.ai-container .message-bubble { background: #30363d; color: #c9d1d9; border-bottom-left-radius: 2px; }
+.chat-footer { padding: 10px; background: #21262d; display: flex; gap: 8px; }
+.chat-footer input { flex: 1; background: #0d1117; border: 1px solid #30363d; color: white; padding: 8px; border-radius: 5px; outline: none; }
+.chat-footer button { background: #1f6feb; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
+
+/* Анимация (typing) */
+.typing span { display: inline-block; width: 4px; height: 4px; background: #8b949e; border-radius: 50%; margin-right: 2px; animation: wave 1.3s infinite; }
+@keyframes wave { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-4px); } }

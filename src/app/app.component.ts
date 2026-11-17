@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+// 1. AI КӨМЕКШІ КОМПОНЕНТІН ИМПОРТТАУ:
+import { AiHelperComponent } from './components/ai-helper/ai-helper.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    CommonModule, 
+    RouterOutlet, 
+    RouterLink, 
+    RouterLinkActive,
+    AiHelperComponent // 2. ОСЫНДА ҚОСЫҢЫЗ
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'kz-cs-arena';

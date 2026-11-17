@@ -1,0 +1,198 @@
+.reg-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #050505 100%);
+  padding: 40px 20px;
+}
+
+.reg-card {
+  position: relative;
+  background: rgba(15, 15, 20, 0.95);
+  border: 1px solid rgba(255, 0, 85, 0.3);
+  border-radius: 4px; /* Киберспортта өткір бұрыштар жақсы көрінеді */
+  width: 100%;
+  max-width: 480px;
+  padding: 50px 40px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 0, 85, 0.05);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+/* Сәндік неон сызықтары */
+.card-line {
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  background: #ff0055;
+  box-shadow: 0 0 10px #ff0055;
+}
+.card-line.top { top: 0; left: 20px; }
+.card-line.bottom { bottom: 0; right: 20px; }
+
+.reg-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.live-dot {
+  width: 8px; height: 8px;
+  background: #ff0055;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  box-shadow: 0 0 10px #ff0055;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.neon-text-pink {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 950;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(255, 0, 85, 0.6);
+  margin: 0;
+}
+
+.reg-subtitle {
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Форма элементтері */
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group label {
+  color: #00e5ff; /* Көкшіл неон түс */
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.cyber-input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 14px 18px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cyber-input:focus {
+  border-color: #ff0055;
+  background: rgba(255, 0, 85, 0.05);
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.2);
+}
+
+/* Faceit Nickname & ELO Badge */
+.nickname-input-wrapper, .elo-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.faceit-tag, .elo-badge {
+  position: absolute;
+  right: 15px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.faceit-tag {
+  background: #ff5500; /* Faceit-тың қызғылт сары түсі */
+  color: #fff;
+}
+
+.elo-badge {
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+.nickname-field, .elo-field {
+  width: 100%;
+  padding-right: 80px; /* Бадж сию үшін орын */
+}
+
+/* Select стилі */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff0055;
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+
+.cyber-select {
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+}
+
+.cyber-select option {
+  background: #111;
+  color: #fff;
+}
+
+/* Батырма стилі */
+.submit-btn {
+  position: relative;
+  margin-top: 15px;
+  background: #ff0055;
+  border: none;
+  color: #fff;
+  padding: 18px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+  letter-spacing: 2px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(255, 0, 85, 0.6);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Плейсхолдер түсі */
+::placeholder {
+  color: #444;
+  font-size: 0.9rem;
+}

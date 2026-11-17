@@ -1,0 +1,176 @@
+<div class="home-wrapper">
+  
+  <section class="main-news-banner no-image-banner">
+    <div class="banner-content">
+      <span class="news-badge">Breaking News</span>
+      <h1>Қазақстанда жаңа киберспорттық ұйым ашылды!</h1>
+      <p>Отандық CS2 сахнасына жаңа деңгей әкелетін жас таланттар жиналды.</p>
+    </div>
+  </section>
+
+  <div class="hero-banner">
+    <h1 class="neon-title-blue">KZ CS ARENA</h1>
+    <p class="subtitle">ҚАЗАҚСТАНДЫҚ FACEIT ҚАУЫМДАСТЫҒЫ</p>
+  </div>
+
+  <div class="profile-dashboard" *ngIf="currentUser">
+    <div class="user-main-info">
+      <div class="faceit-level" [ngClass]="'lvl-' + getLevel(currentUser.faceitElo)">
+        {{ getLevel(currentUser.faceitElo) }}
+      </div>
+      <div class="user-details">
+        <h2 class="user-nick">{{ currentUser.nickname }}</h2>
+        <p class="elo-tag">{{ currentUser.faceitElo }} ELO</p>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-label">Hours</span>
+        <span class="stat-value">{{ currentUser.hoursPlayed }}h</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Win Rate</span>
+        <span class="stat-value text-green">{{ currentUser.winRate }}%</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">ADR</span>
+        <span class="stat-value">{{ currentUser.adr }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Avg Kills</span>
+        <span class="stat-value">{{ currentUser.avgKills }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Tourneys</span>
+        <span class="stat-value text-red">{{ currentUser.tournamentsCount }}</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="stream-section">
+    <div class="section-header">
+      <div class="live-indicator">
+        <span class="dot"></span>
+        LIVE STREAM
+      </div>
+      <h2 class="match-title">GRAND FINAL: SPIRIT vs VIRTUS.PRO</h2>
+    </div>
+
+    <div class="stream-container">
+      <div class="video-wrapper">
+        <video #streamVideo autoplay muted loop playsinline class="stream-video">
+          <source src="/assets/stream.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+
+        <button class="sound-toggle" (click)="streamVideo.muted = !streamVideo.muted">
+          {{ streamVideo.muted ? '🔇 Дыбысты қосу' : '🔊 Дыбысты өшіру' }}
+        </button>
+      </div>
+
+      <div class="match-stats-overlay">
+        <div class="team-score-box">
+          <div class="team">
+            <img src="assets/spirit.jpeg" alt="Spirit">
+            <span>SPIRIT</span>
+          </div>
+          
+          <div class="score">1 : 0</div>
+          
+          <div class="team">
+            <span>VIRTUS.PRO</span>
+            <img src="assets/virtuspro.jpg" alt="Virtus pro">
+          </div>
+        </div>
+        <div class="map-info">MAP 2: ANUBIS (LIVE)</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="news-section-wrapper">
+    <h2 class="section-title">Соңғы жаңалықтар</h2>
+    <div class="featured-news-card">
+      <div class="news-img-box">
+        <img src="/assets/team.jpg" alt="New Team Roster">
+      </div>
+      <div class="news-text-content">
+        <span class="post-date">20 Сәуір, 2026</span>
+        <h3>Ресми: Жаңа команда құрамы белгілі болды</h3>
+        <p>Бүгін Қазақстан намысын қорғайтын жаңа бес айлакер таныстырылды.</p>
+        
+        <div class="roster-info-block">
+          <h4>TEAM ROSTER:</h4>
+          <div class="players-list">
+            <div class="player"><span>1</span> MirAs7</div>
+            <div class="player"><span>2</span> walter</div>
+            <div class="player"><span>3</span> CTRL</div>
+            <div class="player"><span>4</span> nurik</div>
+            <div class="player"><span>5</span> jantore</div>
+          </div>
+          <p class="coach-label">Coach: <strong>Dosan</strong></p>
+
+          <div class="team-mission">
+            <h5>🎯 АЛДАҒЫ МАҚСАТ:</h5>
+            <p>Команданың басты мақсаты — KAZNU Major 2026 турнирінде жеңіске жетіп, еуропалық сахнаға жолдама алу.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <section class="info-block">
+      <h2 class="section-title">Турнирлер кестесі</h2>
+      <div class="schedule-grid">
+        <div class="schedule-card active">
+          <div class="card-glow"></div>
+          <span class="status-badge live">Тіркелу ашық</span>
+          <h3>KZ Spring Major 2026</h3>
+          <div class="event-details">
+            <p><span>📅</span> 15 Сәуір</p>
+            <p><span>💰</span> 500,000 ₸</p>
+          </div>
+        </div>
+
+        <div class="schedule-card kaznu">
+          <div class="card-glow"></div>
+          <span class="status-badge wait">Жақында</span>
+          <h3>KAZNU Major 2026</h3>
+          <div class="event-details">
+            <p><span>📅</span> 25 Мамыр</p>
+            <p><span>💰</span> 1,000,000 ₸</p>
+          </div>
+        </div>
+
+        <div class="schedule-card league">
+          <div class="card-glow"></div>
+          <span class="status-badge wait">Жоспарда</span>
+          <h3>KZ National League</h3>
+          <div class="event-details">
+            <p><span>📅</span> 10 Маусым</p>
+            <p><span>💰</span> 2,500,000 ₸</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-block">
+      <h2 class="section-title">Top Players</h2>
+      <div class="ranking-list">
+        <div class="ranking-item gold"><span class="rank-num">#1</span><span class="player-name">MirAs7</span><span class="player-elo">4000 ELO</span></div>
+        <div class="ranking-item"><span class="rank-num">#2</span><span class="player-name">walter</span><span class="player-elo">4500 ELO</span></div>
+        
+        <div class="ranking-item star"><span class="rank-num">#10</span><span class="player-name">NiKo</span><span class="player-elo">4350 ELO</span></div>
+        <div class="ranking-item star"><span class="rank-num">#11</span><span class="player-name">ropz</span><span class="player-elo">4300 ELO</span></div>
+        <div class="ranking-item star"><span class="rank-num">#12</span><span class="player-name">ZywOo</span><span class="player-elo">4280 ELO</span></div>
+        <div class="ranking-item star"><span class="rank-num">#13</span><span class="player-name">broky</span><span class="player-elo">4250 ELO</span></div>
+        <div class="ranking-item star"><span class="rank-num">#14</span><span class="player-name">dev1ce</span><span class="player-elo">4200 ELO</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="action-bar">
+    <button class="join-btn" routerLink="/tournaments">ҚАЗІР ТІРКЕЛУ</button>
+  </div>
+</div>

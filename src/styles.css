@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #141415;
+  color: #d5d5d8;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title { color: #fff; font-size: 1.2rem; border-bottom: 1px solid #333; padding-bottom: 10px; }
+
+.team-card, .player-card {
+  background: #1e1e24;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #2d2d33;
+}
+
+.lvl {
+  width: 35px; height: 35px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; border-radius: 4px; margin-right: 15px;
+}
+
+.lvl-10 { background: #ff003c; box-shadow: 0 0 10px #ff003c; }
+.lvl-9, .lvl-8 { background: #ff8c00; }
+.lvl-1, .lvl-2, .lvl-3 { background: #fff; color: #000; }
+
+.reg-btn {
+  background: transparent; border: 1px solid #ff0055;
+  color: #ff0055; padding: 15px 30px; cursor: pointer;
+}
+
+.reg-btn:hover { background: #ff0055; color: #fff; }
+
+.hero { text-align: center; padding: 50px 0; }
+.neon-title { color: #00e5ff; text-shadow: 0 0 10px #00e5ff; }
